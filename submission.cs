@@ -21,7 +21,7 @@ namespace ConsoleApp1
     {
         public static string xmlURL = "Your XML URL";
         public static string xmlErrorURL = "Your Error XML URL";
-        public static string xsdURL = "Your XSD URL";
+        public static string xsdURL = "https://manushri1415.github.io/CSE445-XML-Project/Hotels.xsd";
 
         public static void Main(string[] args)
         {
