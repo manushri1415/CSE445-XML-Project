@@ -19,8 +19,8 @@ namespace ConsoleApp1
 
     public class Program
     {
-        public static string xmlURL = "Your XML URL";
-        public static string xmlErrorURL = "Your Error XML URL";
+        public static string xmlURL = "https://manushri1415.github.io/CSE445-XML-Project/Hotels.xml";
+        public static string xmlErrorURL = "https://manushri1415.github.io/CSE445-XML-Project/HotelsErrors.xml";
         public static string xsdURL = "https://manushri1415.github.io/CSE445-XML-Project/Hotels.xsd";
 
         public static void Main(string[] args)
@@ -40,14 +40,27 @@ namespace ConsoleApp1
         // Q2.1
         public static string Verification(string xmlUrl, string xsdUrl)
         {
-
-
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, xsdUrl); // Add the schema to the settings object
+            settings.ValidationType = ValidationType.Schema;
+            string error = "No Error";
+            settings.ValidationEventHandler += (sender, e) =>
+            {
+                error = e.Message;
+            };
+            using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
+            {
+                while (reader.Read()) ;
+            }
             //return "No Error" if XML is valid. Otherwise, return the desired exception message.
+            return error;
         }
 
         public static string Xml2Json(string xmlUrl)
         {
-            
+            XmlDocument xd = new XmlDocument();
+            xd.Load(xmlUrl);
+            string jsonText = JsonConvert.SerializeXmlNode(xd);
 
             // The returned jsonText needs to be de-serializable by Newtonsoft.Json package. (JsonConvert.DeserializeXmlNode(jsonText))
             return jsonText;
