@@ -79,9 +79,9 @@
         </Address>
     </Hotel>
     <Hotel>
-        <Name>InterContinental Minneapolis – St. Paul Airport</Name>
+        <Name>InterContinental Minneapolis-St. Paul Airport</Name>
         <Phone>612-725-0500</Phone>
-        <Address NearestAirport="Minneapolis–Saint Paul International Airport">
+        <Address NearestAirport="Minneapolis-Saint Paul International Airport">
             <Number>5005</Number>
             <Street>Glumack Drive</Street>
             <City>Minneapolis</City>
@@ -89,7 +89,7 @@
             <Zip>55450</Zip>
         </Address>
     </Hotel>
-    <Hotel Rating="4.2">
+    <Hotel>
         <Name>Tampa Airport Marriott</Name>
         <Phone>813-879-5151</Phone>
         <Address NearestAirport="Tampa International Airport">
@@ -100,7 +100,7 @@
             <Zip>33607</Zip>
         </Address>
     </Hotel>
-    <Hotel Rating="4.2">
+    <Hotel>
         <Name>Hilton Boston Logan Airport</Name>
         <Phone>617-568-6700</Phone>
         <Address NearestAirport="Logan International Airport">
