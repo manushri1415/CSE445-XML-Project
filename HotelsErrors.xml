@@ -47,8 +47,7 @@
     </Hotel>
     <Hotel>
         <Name>H Hotel Los Angeles</Name>
-        <Phone>213-389-6711</Phone>
-        3206 W 8th St, Los Angeles, CA 90005 · 
+        <Phone>213-389-6711</Phone> 
         <Address NearestAirport="Los Angeles International Airport">
             <Number>3206</Number>
             <Street>W 8th St</Street>
@@ -66,6 +65,7 @@
             <City>Detroit</City>
             <State>MI</State>
             <Zip>48242</Zip>
+        </Address>
     </Hotel>
     <Hotel>
         <Name>Hyatt Regency Orlando International Airport</Name>
