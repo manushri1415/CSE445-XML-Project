@@ -42,13 +42,15 @@ namespace ConsoleApp1
         {
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.Schemas.Add(null, xsdUrl); // Add the schema to the settings object
+            // Set the validation type to Schema
             settings.ValidationType = ValidationType.Schema;
             string error = "No Error";
-            settings.ValidationEventHandler += (sender, e) =>
+            //Add a ValidationEventHandler to capture errors if there is a validation error, set the 'error' variable to the error message.
+            settings.ValidationEventHandler += (sender, e) => 
             {
                 error = e.Message;
             };
-            using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
+            using (XmlReader reader = XmlReader.Create(xmlUrl, settings)) // Create an XmlReader with the settings
             {
                 while (reader.Read()) ;
             }
@@ -58,10 +60,9 @@ namespace ConsoleApp1
 
         public static string Xml2Json(string xmlUrl)
         {
-            XmlDocument xd = new XmlDocument();
+            XmlDocument xd = new XmlDocument(); //using xmlDocument to load the XML from the given URL
             xd.Load(xmlUrl);
-            string jsonText = JsonConvert.SerializeXmlNode(xd);
-
+            string jsonText = JsonConvert.SerializeXmlNode(xd); // Convert the XML document to JSON string using Newtonsoft.Json package
             // The returned jsonText needs to be de-serializable by Newtonsoft.Json package. (JsonConvert.DeserializeXmlNode(jsonText))
             return jsonText;
 
